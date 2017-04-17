@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project Diseases | Home</title>
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+	<script type="text/javascript" src = "static/js/Chart.js"></script>
+</head>
+<body>
+<div id="ds" class="cl">{{data}}</div>
+<div class="chart">
+<canvas id = 'chartcanvas' height="400" width="400"></canvas>
+</div>
+</body>
+<script type="text/javascript">
+ 	var MyDiv1 = document.getElementById('ds');
+	var data = JSON.parse(MyDiv1.innerHTML);
+	var ctx = document.getElementById("chartcanvas");
+	var Chart = new Chart(ctx,{
+    type: 'bubble',
+    data: data,
+    options: {
+        elements: {
+            points: {
+                borderWidth: 1,
+                borderColor: 'rgb(0, 0, 0)'
+            }
+        }
+    }
+	});
+
+
+</script>
+</html>
